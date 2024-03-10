@@ -3,9 +3,17 @@ import './main.css'
 
 const main = () => {
     return(
-        <div>
-            MAIN
-        </div>
+        <main>
+            
+            <section className='left-section'>
+
+            </section>
+
+            <section className='right-section'>
+
+            </section>
+
+        </main>
     )
 }
 
