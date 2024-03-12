@@ -37,7 +37,7 @@ header .menu{
     display: none;
 }
 
-header .icon-menu, header .mode{
+header .icon-menu, header button.mode{
     background-color: var(--bgHeader);
     height: 2.4rem;
     width: 2.4rem;
@@ -50,6 +50,7 @@ header .icon-menu, header .mode{
     border: 1px solid rgba(244, 165, 96, 0.25);
 
     transition: 0.2s;
+    box-shadow: 1px 1px 40px #80f5eb52;
 }
 
 header .icon-menu:hover, header .mode:hover{
@@ -77,6 +78,9 @@ header .fixed{
     background-color: rgba(40, 40, 48, 0.91);
 
     backdrop-filter: blur(4px);
+}
+header .icon-sun{
+    color: rgb(255, 165, 0);
 }
 
 @keyframes mymove {

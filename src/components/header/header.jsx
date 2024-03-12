@@ -1,16 +1,28 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './header.css'
 
 const header = () => {
     const [showModel, setshowModel] = useState(false);
-    return(
+
+    const [theme, setTheme] = useState(localStorage.getItem('currentMode') ?? "dark");
+    useEffect(() => {
+        if(theme == "light"){
+            document.body.classList.remove('dark');
+            document.body.classList.add('light')
+        }else{
+            document.body.classList.remove('light');
+            document.body.classList.add('dark')
+        }
+    }, [theme]);
+
+    return (
         <header className='flex'>
 
             <button onClick={() => {
                 setshowModel(true)
-            }} className='menu icon-menu flex'/>
+            }} className='menu icon-menu flex' />
 
-            <div/>
+            <div />
 
 
             <nav>
@@ -23,8 +35,15 @@ const header = () => {
                 </ul>
             </nav>
 
-            <button className='mode flex'>
-                <span className='icon-moon-o'></span>
+            <button onClick={() =>{
+                
+                localStorage.setItem('currentMode',theme === 'dark'? 'light' : 'dark');
+
+                setTheme(localStorage.getItem('currentMode'))
+
+
+            }} className='mode flex'>
+                {theme === 'dark'?(<span className='icon-moon-o'></span>):(<span className='icon-sun'></span>)}
             </button>
 
             {showModel && (
@@ -33,13 +52,13 @@ const header = () => {
 
                         <li><button className='icon-cross' onClick={() => {
                             setshowModel(false)
-                        }}/></li>
+                        }} /></li>
 
-                    <li><a href="">About</a></li>
-                    <li><a href="">Articles</a></li>
-                    <li><a href="">Projects</a></li>
-                    <li><a href="">Speaking</a></li>
-                    <li><a href="">Users</a></li>
+                        <li><a href="">About</a></li>
+                        <li><a href="">Articles</a></li>
+                        <li><a href="">Projects</a></li>
+                        <li><a href="">Speaking</a></li>
+                        <li><a href="">Users</a></li>
                     </ul>
                 </div>
             )}
