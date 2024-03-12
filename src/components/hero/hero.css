@@ -40,6 +40,10 @@ section.hero p.sub-title{
     line-height: 1.6rem;
     margin-bottom: 30px;
 }
+section.hero .animation{
+    width: 100%;
+    translate: 100px 55px;
+}
 
 section.hero .icons{
     font-size: 1.3rem;
@@ -53,4 +57,10 @@ section.hero .icons .icon:hover{
     color: var(--icon-hover);
     transition: 0.3s;
     cursor: pointer;
+}
+
+@media (max-width : 1250px) {
+    .animation{
+        display: none;
+    }
 }

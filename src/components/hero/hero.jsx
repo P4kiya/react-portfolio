@@ -1,8 +1,12 @@
-import React from 'react'
+
+import Lottie from "lottie-react";
+import developerAnimation from '../../../public/developer.json'
 import './hero.css'
+import { useRef } from "react";
 
 const hero = () => {
-    return(
+    const lottieRef = useRef();
+    return (
         <section className='hero flex'>
 
             <div className='left-section'>
@@ -29,7 +33,13 @@ const hero = () => {
             </div>
 
             <div className='right-section animation'>
-
+                <Lottie
+                    lottieRef={lottieRef}
+                    onLoadedImages={() => {
+                        lottieRef.current.setSpeed(0.2)
+                    }}
+                    animationData={developerAnimation}
+                />
             </div>
 
         </section>
