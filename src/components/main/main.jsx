@@ -1,5 +1,6 @@
-import { useState } from 'react'
 import './main.css'
+import { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion';
 import { myProjects } from './myProjects'
 
 const main = () => {
@@ -48,9 +49,16 @@ const main = () => {
             </section>
 
             <section className='right-section flex'>
+                <AnimatePresence>
                 {arr.map((item) => {
                     return (
-                        <article key={item.imgPath} className='card'>
+                        <motion.article 
+                        layout
+                        initial={{transform:"scale(0)"}}
+                        animate={{transform:"scale(1)"}}
+                        key={item.imgPath}
+                        transition={{type:'spring',damping:8,stiffness:50}}
+                        className='card'>
                             <img src={item.imgPath} width={266} />
                             <div style={{ width: "266px" }} className="box">
                                 <h1 className='title'>{item.projectTitle}</h1>
@@ -66,9 +74,10 @@ const main = () => {
                                     </a>
                                 </div>
                             </div>
-                        </article>
-                    )
+                        </motion.article>
+                    );
                 })}
+                </AnimatePresence>
             </section>
 
         </main>

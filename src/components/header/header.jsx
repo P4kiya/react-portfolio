@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
 import './header.css'
+import { useEffect, useState } from 'react';
 
 const header = () => {
     const [showModel, setshowModel] = useState(false);

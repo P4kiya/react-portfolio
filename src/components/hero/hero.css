@@ -5,6 +5,7 @@ section.hero{
 section.hero .parent-avatar.flex{
     align-items: end;
     gap: 0.6rem;
+    min-height: 88px;
 }
 
 section.hero .left-section{

@@ -1,5 +1,5 @@
-import { useForm, ValidationError } from '@formspree/react';
 import './contact.css'
+import { useForm, ValidationError } from '@formspree/react';
 import Lottie from "lottie-react";
 import contactUs from '../../../public/contact-us.json'
 
